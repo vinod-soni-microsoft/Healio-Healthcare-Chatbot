@@ -1,27 +1,21 @@
-# semantic-kernel-sleeping-bag
+# Healio Healthcare Chatbot
 
 ![architecture](./.img/architecture.png)
 
-This demo app demonstrates how to use C# & Semantic Kernel to orchestrate AI calls. In this example, we are building a chatbot for an outdoor sports equipment company. This chatbot needs to be able to answer common questions that customer support gets.
+This demo app demonstrates how to use C# & Semantic Kernel to orchestrate AI calls. In this example, we are building a healthcare chatbot (Healio). This chatbot needs to be able to answer common questions that customer support gets at hospitals helpdesk.
 
-For example, a customer might ask "Will my sleeping bag work for my trip to Patagonia next month?". The chatbot needs to be able to understand the question and then answer it. The answer might be "Yes, your sleeping bag will work for your trip to Patagonia next month. The lowest average temperature in Patagonia in November is 20 degrees Fahrenheit. Your sleeping bag is rated for 5 degrees Fahrenheit.".
+For example, a customer might ask "How can I schedule an appointment with Dr. Smith, who performed my surgery last month, for a follow-up checkup next week and look availability of doctor in nearest hospital in my network?". The chatbot needs to be able to understand the question and then answer it. The answer might be "Yes, Dr. Smith services are avilable in your network hospital and the nearest hospital [is this location]".
 
 In order to do this, the code needs to be able to call several different data sources to answer the question.
 
-1.  OrderHistory - This is an API that returns the customer's order history (including the product IDs of the items they ordered).
-1.  ProductCatalog - This is an API that returns the product details for a given product ID.
-1.  LocationLookup - This ia an API that returns the GPS coordindates of a given location.
-1.  HistoricalWeather - This is an API that returns the average temperature for a given GPS location and date.
+1.  Adminstrative Data Plugin - includes information such as type of service, diagnosis and procedure codes, location of service, and amount billed and        reimbursed.
+2.  Patient Survey Plug- self-reported information from patients about their health care experiences. It covers aspects such as satisfaction, quality, access, and outcomes of care.
+3.  Patient Medical Record Plugin - contains rich clinical detail such as diagnoses, treatments, medications, lab results, and outcomes.
+4.  Hospital Database Plugin - such as individual hospitals, doctor's schedule, hospital associations, state and regional data organizations, health departments, and federal agencies. It includes information such as hospital characteristics, performance measures, quality indicators, and patient outcomes.
+5.  Location Lookup Plugin  - Find Hospital in network and nearest location
+6.  Other custom support Plugin        - Any other support plugin you want to develop for additional data source or some mathematical calculations.
 
 We need the `RecommendationAPI` to be able to call all of these APIs and then combine the results into a single answer. Semantic Kernel enables us to orchestrate these API calls via the StepwisePlanner. This planner will make multiple calls to the OpenAI service, make up its own plan to answer the question based upon the data & native plugins it has access to, then execute the plan.
-
-Here is a series of blog posts that go through this demo in detail.
-
-- [How to enhance your own chatbot using C# Semantic Kernel & Azure OpenAI that plans & orchestrates its own API calls - part 1](https://jordanbeandev.com/how-to-build-your-own-chatbot-using-c-semantic-kernel-azure-openai-part-1/)
-- [How to enhance your own chatbot using C# Semantic Kernel & Azure OpenAI that plans & orchestrates its own API calls - part 2 (demo app implementation)](https://jordanbeandev.com/how-to-build-your-own-chatbot-using-c-semantic-kernel-azure-openai-part-2/)
-- [How to enhance your own chatbot using C# Semantic Kernel & Azure OpenAI that plans & orchestrates its own API calls - part 3 (demo app)](https://jordanbeandev.com/how-to-build-your-own-chatbot-using-c-semantic-kernel-azure-openai-part-3-demo-app/)
-- [How to enhance your own chatbot using C# Semantic Kernel & Azure OpenAI that plans & orchestrates its own API calls - part 4 (local development & deployment details)](https://jordanbeandev.com/how-to-build-your-own-chatbot-using-c-semantic-kernel-azure-openai-part-4-local-development-deployment-details/)
-- [How to dynamically set a runtime config value for a React app in Azure Container Apps](https://jordanbeandev.com/how-to-dynamically-set-a-runtime-config-value-for-a-react-app-in-azure-container-apps/)
 
 ## Disclaimer
 
@@ -56,14 +50,14 @@ Here is a series of blog posts that go through this demo in detail.
 
 1.  Navigate to the URL specified in the command window (or go to the Web app container app in the Azure portal) and click the `Submit` button.
 
-![homepage](.img/homepage.png)
+![homepage](.img/abc.png)
 
 > [!NOTE]  
 > Since this is using generative AI, there is no guarantee that the plan generated will exactly match the screenshots. You may have to run the demo several times to get it to output the desired result.
 
 1.  After getting a response, click on the `Thought Process` button to see a diagram detailing the steps the planner took to answer the question.
 
-![thought process](.img/thought-process.png)
+![thought process](.img/xyz.png)
 
 ## Run locally
 
