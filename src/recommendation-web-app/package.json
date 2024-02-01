@@ -1,0 +1,61 @@
+{
+  "name": "recommendation-web-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/lab": "^5.0.0-alpha.157",
+    "@mui/material": "^5.14.17",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.61",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-router-dom": "^5.3.3",
+    "dotenv": "^16.3.1",
+    "mermaid": "8.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "envconfig": "node entrypoint.js -e .env -o ./public/env-config.js",
+    "prestart": "npm run envconfig",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "shx cp ./entrypoint.sh ./build && shx cp staticwebapp.config.json ./build || echo 'post-build completed'",
+    "pretest": "npm run envconfig",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "mermaid": "^10.6.1",
+    "shx": "^0.3.4"
+  }
+}
