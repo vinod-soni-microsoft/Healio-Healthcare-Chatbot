@@ -9,17 +9,17 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/HitMovies/HitMovies.csproj", "src/HitMovies/"]
-RUN dotnet restore "./src/HitMovies/./HitMovies.csproj"
+COPY ["src/OrderHistory/OrderHistory.csproj", "src/OrderHistory/"]
+RUN dotnet restore "./src/OrderHistory/./OrderHistory.csproj"
 COPY . .
-WORKDIR "/src/src/HitMovies"
-RUN dotnet build "./HitMovies.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/OrderHistory"
+RUN dotnet build "./OrderHistory.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./HitMovies.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./OrderHistory.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HitMovies.dll"]
+ENTRYPOINT ["dotnet", "OrderHistory.dll"]
