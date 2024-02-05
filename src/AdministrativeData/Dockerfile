@@ -9,17 +9,17 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["src/OrderHistory/OrderHistory.csproj", "src/OrderHistory/"]
-RUN dotnet restore "./src/OrderHistory/./OrderHistory.csproj"
+COPY ["src/AdministrativeData/AdministrativeData.csproj", "src/AdministrativeData/"]
+RUN dotnet restore "./src/AdministrativeData/./AdministrativeData.csproj"
 COPY . .
-WORKDIR "/src/src/OrderHistory"
-RUN dotnet build "./OrderHistory.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/AdministrativeData"
+RUN dotnet build "./AdministrativeData.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./OrderHistory.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./AdministrativeData.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "OrderHistory.dll"]
+ENTRYPOINT ["dotnet", "AdministrativeData.dll"]

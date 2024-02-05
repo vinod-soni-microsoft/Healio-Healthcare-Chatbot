@@ -21,11 +21,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-Dictionary<string, OrderHistory.OrderHistory> orderHistory = new()
+Dictionary<string, OrderHistory.AdministrativeDataHistory> orderHistory = new()
 {
     {
     "dkschrute",
-    new OrderHistory.OrderHistory
+    new OrderHistory.AdministrativeDataHistory
     {
             OrderId = "1",
             CustomerId = "dkschrute",
@@ -44,9 +44,9 @@ Dictionary<string, OrderHistory.OrderHistory> orderHistory = new()
     }
 };
 
-app.MapGet("/orderHistory/{username}", Results<Ok<OrderHistory.OrderHistory>, NotFound<NotFoundMessage>> (string username) =>
+app.MapGet("/orderHistory/{username}", Results<Ok<OrderHistory.AdministrativeDataHistory>, NotFound<NotFoundMessage>> (string username) =>
 {
-    OrderHistory.OrderHistory? response = null;
+    OrderHistory.AdministrativeDataHistory? response = null;
     if (orderHistory.TryGetValue(username, out var orderHistoryItem))
     {
         response = orderHistoryItem;
