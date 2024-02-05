@@ -35,7 +35,7 @@ interface ChatWindowProps {
 }
 
 export default function ChatWindow({ reset, setReset }: ChatWindowProps) {
-    const defaultMessage = "Will my sleeping bag work for my trip to Patagonia next month?";
+    const defaultMessage = "How can I schedule an appointment with Dr. Smith, who performed my surgery last month, for a follow-up checkup next week and look availability of doctor in nearest hospital in my network?";
 
     const [responseMessage, setResponseMessage] = useState<ResponseMessage | undefined>(undefined);
     const [entireChatHistory, setEntireChatHistory] = useState<Array<OpenAIMessage>>([]);

@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
                                     textDecoration: "none",
                                 }}
                             >
-                                Contoso Retail Chatbot
+                                Healio Healthcare Chatbot
                             </Typography>
                             <Typography variant="h6" noWrap sx={{ mr: 1 }}>
                                 (with Azure OpenAI & Semantic Kernel)
