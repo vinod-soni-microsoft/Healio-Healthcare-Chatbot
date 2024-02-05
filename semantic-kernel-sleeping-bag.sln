@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductCatalog", "src\Produ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecommendationApi", "src\RecommendationApi\RecommendationApi.csproj", "{96042EFD-C379-4AA7-A303-42DBD7B94C30}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "recommendation-web-app", "src\recommendation-web-app\recommendation-web-app.esproj", "{961DE240-E691-42CF-A2D7-1710CC8E31DF}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "recommendation-web-app", "src\recommendation-web-app\recommendation-web-app.csproj", "{961DE240-E691-42CF-A2D7-1710CC8E31DF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D44DC587-49AB-41D5-A698-1D8A2EE714E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,10 +23,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HitTVShows", "src\HitTVShows\HitTVShows.csproj", "{DA6F51C6-86E2-4DEA-9EA7-C33AA449504B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HitMovies", "src\HitMovies\HitMovies.csproj", "{67BADDB6-9EF1-412B-88DF-57D671D715B0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "semantic-kernel-sleeping-bag.AppHost", "src\semantic-kernel-sleeping-bag.AppHost\semantic-kernel-sleeping-bag.AppHost.csproj", "{AA80076A-266F-42C8-8C77-54DF868E9138}"
 EndProject
@@ -64,14 +60,6 @@ Global
 		{961DE240-E691-42CF-A2D7-1710CC8E31DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{961DE240-E691-42CF-A2D7-1710CC8E31DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{961DE240-E691-42CF-A2D7-1710CC8E31DF}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{DA6F51C6-86E2-4DEA-9EA7-C33AA449504B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA6F51C6-86E2-4DEA-9EA7-C33AA449504B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA6F51C6-86E2-4DEA-9EA7-C33AA449504B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA6F51C6-86E2-4DEA-9EA7-C33AA449504B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67BADDB6-9EF1-412B-88DF-57D671D715B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67BADDB6-9EF1-412B-88DF-57D671D715B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67BADDB6-9EF1-412B-88DF-57D671D715B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67BADDB6-9EF1-412B-88DF-57D671D715B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA80076A-266F-42C8-8C77-54DF868E9138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA80076A-266F-42C8-8C77-54DF868E9138}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA80076A-266F-42C8-8C77-54DF868E9138}.Release|Any CPU.ActiveCfg = Release|Any CPU
